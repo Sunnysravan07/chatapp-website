@@ -1,0 +1,153 @@
+/* ========== ROOT STYLES ========== */
+:root {
+  --primary-color: #1d2671;
+  --secondary-color: #c33764;
+  --text-dark: #333;
+  --text-light: #666;
+  --bg-light: #f8f9fa;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* ========== GLOBAL STYLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  padding-top: 70px;
+  background-color: #fff;
+}
+
+/* ========== TYPOGRAPHY ========== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+p {
+  color: var(--text-light);
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.hero .btn {
+  padding: 12px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--secondary-color) !important;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  margin-top: 5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+footer .text-info {
+  color: #17a2b8 !important;
+  font-weight: 600;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero h1 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
